@@ -1,0 +1,17 @@
+plugins {
+    id 'fabric-loom' version '0.10.0'
+}
+
+repositories {
+    maven { url 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.4'
+    mappings 'net.fabricmc:yarn:1.21.4+build.5:v2'
+    modCompile 'net.fabricmc:fabric-loader:0.14.1'
+}
+
+tasks.named('remapJar') {
+    dependsOn 'build'
+}
